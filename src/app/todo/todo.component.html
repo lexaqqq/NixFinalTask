@@ -1,0 +1,20 @@
+<h2>My Todo</h2>
+<ul class="todo">
+    <li *ngFor="let todo of todos">
+      <a routerLink="/detail/{{todo.id}}">
+        <span class="badge">{{todo.id}}</span> {{todo.title}}
+      </a>
+      <button class="delete" title="delete todo"
+  (click)="delete(todo)">x</button>
+    </li>
+  </ul>
+  <div>
+    <label for="new-title">title: </label>
+    <input id="new-title" #todoTitle />
+    <label for="new-about">about: </label>
+    <input id="new-about" #todoAbout />
+
+    <button class="add-button" (click)="add(todoTitle.value, todoAbout.value);">
+      Add todo
+    </button>
+  </div>
