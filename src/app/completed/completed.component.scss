@@ -1,0 +1,92 @@
+.done {
+  text-align: center;
+  color:white;
+}
+.todo-menu {
+  padding: 0;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+  animation-duration: 0.3s;
+}
+.title {
+  padding: 1rem;
+  font-size: 1.8rem;
+  text-decoration: none;
+  display: inline-block;
+  color: #3f3f3f;
+  text-align: center;
+  width: 100%;
+  min-width: 70px;
+  margin: .5rem auto;
+  box-sizing: border-box;
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+  border:1px solid black;
+  border-radius: 3px; 
+  text-shadow: 1px 1px 2px white;
+}
+.completed{
+text-decoration: line-through;
+color: #3f3f3f;
+}
+.todo-item {
+margin-bottom: 12px;
+display: flex;
+align-items:center;
+justify-content: flex-start;
+animation-duration: 0.3s;
+flex-direction: row;
+padding: 10px;
+}
+.list{
+padding: 10px;
+width: 500px;
+display: flex;
+justify-content: space-between;
+border:1px solid black;
+border-radius: 3px; 
+font-size: 1.5rem;
+margin-top: 5px;
+color:#3f3f3f;
+text-shadow: 1px 1px 2px white;
+}
+button { 
+background-color: #4CAF50;
+border: none;
+color: white;
+padding: 10px 22px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+transition-duration: 0.4s;
+cursor: pointer;
+background-color: white; 
+color: #3f3f3f; 
+border: 2px solid #4CAF50;
+}
+button:hover {
+background-color: #4CAF50;
+color: white;
+}
+.about{
+padding: 10px;
+border:1px solid black;
+border-radius: 3px; 
+font-size: 1.5rem;
+color: #3f3f3f;
+text-shadow: 1px 1px 2px white;
+}
+p{
+font-size: 1.5rem;
+}
+h2{
+  color: #303030;
+}

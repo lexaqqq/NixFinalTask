@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Todo } from '../interface/todo';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { catchError, map, tap } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })

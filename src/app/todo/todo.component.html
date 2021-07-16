@@ -1,20 +1,26 @@
 <h2>My Todo</h2>
-<ul class="todo">
-    <li *ngFor="let todo of todos">
-      <a routerLink="/detail/{{todo.id}}">
-        <span class="badge">{{todo.id}}</span> {{todo.title}}
-      </a>
-      <button class="delete" title="delete todo"
-  (click)="delete(todo)">x</button>
-    </li>
-  </ul>
   <div>
-    <label for="new-title">title: </label>
-    <input id="new-title" #todoTitle />
-    <label for="new-about">about: </label>
-    <input id="new-about" #todoAbout />
-
-    <button class="add-button" (click)="add(todoTitle.value, todoAbout.value);">
-      Add todo
-    </button>
+    <form [formGroup] = "form">
+      <label for="new-title">Title: </label>
+      <input class="todo-input" type="text" id="new-title" #todoTitle formControlName="title"/>
+      <label for="new-about">About: </label>
+      <input class="todo-input" id="new-about" #todoAbout formControlName="about"/>
+      <label for="new-about">Tasks: </label>
+      <input class="todo-input" id="new-about" #todoFirstTask formControlName="firstTask"/>
+      <div [formGroup] = "form2">
+        <ul formArrayName = "tasks">
+          <li *ngFor="let item of task.controls; let i = index" class="task">
+            <input class="todo-input" type="text" formControlName="{{i}}">
+          </li>
+        </ul>
+      </div>
+      <button 
+      class="add-button" 
+      (click)="add(todoTitle.value, todoAbout.value, todoFirstTask.value);" 
+      type="submit"
+      [disabled]="form.invalid">
+        Add todo
+      </button>
+      <button (click)="addTask()" class="add-button" >Add Task</button>
+    </form>
   </div>

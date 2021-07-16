@@ -1,12 +1,32 @@
-<h2>All</h2>
-<div class="tod-menu" *ngFor="let todo of todos">
-  <a
-  routerLink="/detail/{{todo.id}}">
-  <div class="title">
-    {{todo.title}}
+
+<h2 class="date">{{date| date:"fullDate"}}</h2>
+<p *ngIf="todos[0] == null; else emp">Active todos have not opened yet...</p>
+<ng-template #emp>
+  <div class="todo-menu" *ngFor="let todo of todos" >
+    <div *ngIf="todo.isCompleted == false; else done" class="todo-item">
+      <div>
+          <div class="title">
+            {{todo.title}}
+          </div>
+          <div class="about">
+           {{todo.about}}
+          </div>
+          <form>
+            <div *ngFor="let l of todo.list" class="list">
+              <span [ngClass]="{'completed':l.completed}">{{l.name}}</span>
+              <input class="checkbox" type="checkbox" [(ngModel)] = "l.completed" name="сompleted" *ngIf="l.name">
+            </div>
+            <div class="buttons">
+              <button class="delete" title="delete todo"
+              (click)="delete(todo)">Delete</button>
+              <button (click) ="complete(todo)">Completed</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      
   </div>
-</a>
-<div class="about">
-  {{todo.about}}
-</div>
-</div>
+<ng-template #done>
+</ng-template>
+
+</ng-template>

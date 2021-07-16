@@ -1,0 +1,25 @@
+<p *ngIf="todos[0] == null; else emp">Active todos have not opened yet...</p>
+<ng-template #emp>
+<h2 class="done">Completed</h2>
+  <div class="tod-menu" *ngFor="let todo of todos" >
+    <div *ngIf="todo.isCompleted == true; else done" class="todo-item">
+      <div>
+        <div class="title">
+          {{todo.title}}
+        </div>
+        <div class="about">
+        {{todo.about}}
+        </div>
+          <div *ngFor="let l of todo.list" class="list">
+            <span [ngClass]="{'completed':l.completed}">{{l.name}}</span>
+            <input type="checkbox" [(ngModel)] = "l.completed" name="сompleted" *ngIf="l.name" disabled>
+          </div>
+          <button class="delete" title="delete todo"
+          (click)="delete(todo)">Delete</button>
+        </div>
+      </div>
+  </div>
+<ng-template #done>
+</ng-template>
+
+</ng-template>

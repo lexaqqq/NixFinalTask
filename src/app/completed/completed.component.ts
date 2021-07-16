@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { TodoService } from '../services/todo.service';
 import { Todo } from '../interface/todo';
+
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  selector: 'app-completed',
+  templateUrl: './completed.component.html',
+  styleUrls: ['./completed.component.scss']
 })
-export class DashboardComponent implements OnInit {
+export class CompletedComponent implements OnInit {
+
   public todos: Todo[] = [];
   public todo!:Todo;
-  public date: Date = new Date();
 
   constructor(private todoService: TodoService) { }
   ngOnInit(): void {
@@ -20,7 +21,6 @@ export class DashboardComponent implements OnInit {
     .subscribe({
       next:(todos)=>{
         this.todos = todos;
-
       }
     })
   }
@@ -29,7 +29,6 @@ export class DashboardComponent implements OnInit {
     this.todoService.deleteTodo(todo.id).subscribe();
   }
   public complete(todo:Todo): void{
-    todo.isCompleted = !todo.isCompleted;
     this.todoService.updateTodo(todo).subscribe()
   }
 }

@@ -7,22 +7,23 @@ import { InMemoryDataService } from './in-memory-data.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TodoComponent } from './todo/todo.component';
-import { TodoDetailComponent } from './todo-detail/todo-detail.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CompletedComponent } from './completed/completed.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoComponent,
-    TodoDetailComponent,
-    DashboardComponent
+    DashboardComponent,
+    CompletedComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     )

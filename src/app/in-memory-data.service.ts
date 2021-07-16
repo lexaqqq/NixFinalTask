@@ -7,10 +7,8 @@ import { Todo } from './interface/todo';
 })
 export class InMemoryDataService implements InMemoryDbService {
   createDb(){
-    const todos = [
-      {id: 1 , title: "Learn Angular", about: "Сложно"},
-      {id: 2 , title: "Learn Angular", about: "Сложно"},
-      {id: 3 , title: "Learn Angular", about: "Сложно"}
+    const todos:any = [
+      
     ];
     return {todos};
   }

@@ -1,48 +1,92 @@
 h2 {
     text-align: center;
   }
-  
-  .todo-menu {
+.todo-menu {
     padding: 0;
     margin: auto;
-    max-width: 1000px;
-  
-    /* flexbox */
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-content: flex-start;
     align-items: flex-start;
+    animation-duration: 0.3s;
   }
-  
-  a {
-    background-color: #3f525c;
-    border-radius: 2px;
+.title {
     padding: 1rem;
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     text-decoration: none;
     display: inline-block;
-    color: #fff;
+    color: black;
     text-align: center;
     width: 100%;
     min-width: 70px;
     margin: .5rem auto;
     box-sizing: border-box;
-  
-    /* flexbox */
     order: 0;
     flex: 0 1 auto;
     align-self: auto;
+    border:2px solid black;
+    border-radius: 3px;
+    text-shadow: 1px 1px 2px white; 
   }
-  
-  @media (min-width: 600px) {
-    a {
-      width: 18%;
-      box-sizing: content-box;
-    }
-  }
-  
-  a:hover {
-    background-color: #000;
-  }
+.completed{
+  text-decoration: line-through;
+  color: rgb(88, 86, 86);
+}
+.todo-item {
+  margin-bottom: 12px;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  animation-duration: 0.3s;
+  flex-direction: row;
+  padding: 10px;
+}
+.list{
+  color: black;
+  color: color;
+  padding: 10px;
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  border:2px solid black;
+  border-radius: 3px; 
+  font-size: 1.5rem;
+  margin-top: 5px;
+  text-shadow: 1px 1px 2px white;
+}
+button { 
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: white; 
+  color: grey; 
+  border: 2px solid #4CAF50;
+}
+button:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+.about{
+  padding: 10px;
+  border:2px solid black;
+  border-radius: 3px; 
+  font-size: 1.5rem;
+  color: black;
+  text-shadow: 1px 1px 2px white;
+}
+.date{
+  color: white;
+}
+p{
+  font-size: 1.5rem;
+}
